@@ -3,7 +3,7 @@ package validation
 import (
 	"k8s.io/apimachinery/pkg/util/validation"
 
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
 )
 
 func IsQualifiedName(name string) bool {

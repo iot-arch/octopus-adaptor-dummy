@@ -11,8 +11,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
 )
 
 type Connection interface {

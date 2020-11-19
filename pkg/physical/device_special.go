@@ -11,11 +11,11 @@ import (
 	"k8s.io/apimachinery/pkg/util/runtime"
 
 	"github.com/iot-arch/adaptors/dummy/api/v1alpha1"
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/socket/handler"
 	"github.com/iot-arch/adaptors/dummy/pkg/metadata"
-	"github.com/iot-arch/adaptors/dummy/pkg/mqtt"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/socket/handler"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/mqtt"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 )
 
 func NewSpecialDevice(log logr.Logger, meta metav1.ObjectMeta, toLimb DummySpecialDeviceLimbSyncer) Device {

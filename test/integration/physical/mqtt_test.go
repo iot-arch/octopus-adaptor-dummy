@@ -13,12 +13,12 @@ import (
 	"k8s.io/utils/pointer"
 
 	"github.com/iot-arch/adaptors/dummy/api/v1alpha1"
-	mqttapi "github.com/iot-arch/adaptors/dummy/pkg/mqtt/api"
-	mqtttest "github.com/iot-arch/adaptors/dummy/pkg/mqtt/test"
 	"github.com/iot-arch/adaptors/dummy/pkg/physical"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/converter"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/log/zap"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
+	mqttapi "github.com/iot-arch/adaptors/dummy/octopus/pkg/mqtt/api"
+	mqtttest "github.com/iot-arch/adaptors/dummy/octopus/pkg/mqtt/test"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/converter"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/zap"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 )
 
 var _ = Describe("verify MQTT extension", func() {

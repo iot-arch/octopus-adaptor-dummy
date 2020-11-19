@@ -21,7 +21,7 @@ package mock_v1alpha1
 import (
 	context "context"
 	gomock "github.com/golang/mock/gomock"
-	v1alpha1 "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	v1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
 	grpc "google.golang.org/grpc"
 	metadata "google.golang.org/grpc/metadata"
 	reflect "reflect"

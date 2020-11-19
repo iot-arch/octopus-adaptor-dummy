@@ -8,10 +8,10 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
 	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/metrics"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/connection"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/metrics"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/connection"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 )
 
 func (m *manager) ExistAdaptor(name string) bool {

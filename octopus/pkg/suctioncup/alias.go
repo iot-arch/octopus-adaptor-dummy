@@ -1,7 +1,7 @@
 package suctioncup
 
 import (
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
 )
 
 // alias event subpackage

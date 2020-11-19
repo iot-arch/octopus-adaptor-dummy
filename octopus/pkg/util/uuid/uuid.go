@@ -1,7 +1,7 @@
 package uuid
 
 import (
-	"github.com/iot-arch/adaptors/dummy/pkg/util/converter"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/converter"
 )
 
 const uuidLength = 36

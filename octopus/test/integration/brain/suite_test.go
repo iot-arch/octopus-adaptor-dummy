@@ -14,11 +14,11 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/brain"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/brain/controller"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/zap"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/printer"
-	"github.com/iot-arch/adaptors/dummy/pkg/brain"
-	"github.com/iot-arch/adaptors/dummy/pkg/brain/controller"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/log/zap"
 )
 
 var (

@@ -3,8 +3,8 @@ package connection
 import (
 	"k8s.io/apimachinery/pkg/util/runtime"
 
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/socket/handler"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/socket/handler"
 )
 
 // Serve provides the connection service `svc` on /var/lib/octopus/adaptors/`endpoint`,

@@ -9,9 +9,9 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/util/sets"
 
-	adaptorapi "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/mqtt/api"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/converter"
+	adaptorapi "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/mqtt/api"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/converter"
 )
 
 // PublishMessage aggregates the parameters for publishing.

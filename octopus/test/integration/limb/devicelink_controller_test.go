@@ -12,10 +12,10 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/connection"
-	modelutil "github.com/iot-arch/adaptors/dummy/pkg/util/model"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/connection"
+	modelutil "github.com/iot-arch/adaptors/dummy/octopus/pkg/util/model"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 )
 
 var _ = Describe("verify DeviceLink controller", func() {

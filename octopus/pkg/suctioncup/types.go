@@ -4,7 +4,7 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
 	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
 )
 
 type Manager interface {

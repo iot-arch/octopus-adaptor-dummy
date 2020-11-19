@@ -10,8 +10,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/validation"
 
-	"github.com/iot-arch/adaptors/dummy/pkg/util/collection"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/converter"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/collection"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/converter"
 )
 
 // ExtractObjectFieldPathAsBytes is extracts the field from the given Object

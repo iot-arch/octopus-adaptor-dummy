@@ -17,12 +17,12 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	dummyv1alpha1 "github.com/iot-arch/adaptors/dummy/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/brain"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/limb"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/printer"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/exec"
-	"github.com/iot-arch/adaptors/dummy/pkg/brain"
-	"github.com/iot-arch/adaptors/dummy/pkg/limb"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
 )
 
 var (

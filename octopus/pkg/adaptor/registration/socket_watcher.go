@@ -4,7 +4,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/pkg/errors"
 
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
 )
 
 func newSocketWatcher() (*socketWatcher, error) {

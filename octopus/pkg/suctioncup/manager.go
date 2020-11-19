@@ -8,11 +8,11 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/adaptor"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/registration"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/log/handler"
+	api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/adaptor"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/registration"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/handler"
 )
 
 var log = ctrl.Log.WithName("suctioncup").WithName("manager")

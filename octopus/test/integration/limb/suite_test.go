@@ -15,17 +15,18 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/brain"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/limb"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/limb/controller"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/adaptor"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/zap"
+
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/printer"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/crd"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/node"
-	"github.com/iot-arch/adaptors/dummy/pkg/brain"
-	"github.com/iot-arch/adaptors/dummy/pkg/limb"
-	"github.com/iot-arch/adaptors/dummy/pkg/limb/controller"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/adaptor"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/log/zap"
 )
 
 var (

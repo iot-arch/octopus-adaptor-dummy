@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/iot-arch/adaptors/dummy/pkg/util/converter"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/converter"
 )
 
 // MQTTMessageQoSLevel defines the QoS level of publishing message.

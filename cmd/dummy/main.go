@@ -5,8 +5,8 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/iot-arch/adaptors/dummy/pkg/dummy"
 	"github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/log"
-	"github.com/iot-arch/adaptors/dummy/octopus/pkg/dummy"
 	_ "github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/handler"
 	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/logflag"
 	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/version/verflag"

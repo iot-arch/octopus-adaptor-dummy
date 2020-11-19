@@ -3,7 +3,7 @@ package log
 import (
 	"github.com/go-logr/logr"
 
-	"github.com/iot-arch/adaptors/dummy/pkg/util/log/zap"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/zap"
 )
 
 var log = zap.NewNullLogger()

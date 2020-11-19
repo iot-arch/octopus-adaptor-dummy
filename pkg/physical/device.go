@@ -1,6 +1,6 @@
 package physical
 
-import api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+import api "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
 
 // Device is an interface for device operations set.
 type Device interface {

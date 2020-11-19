@@ -11,8 +11,8 @@ import (
 	apierrs "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/types"
 
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/exec"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
 )
 
 var _ = Describe("verify installation", func() {

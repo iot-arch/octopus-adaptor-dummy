@@ -10,9 +10,9 @@ import (
 	corev1 "k8s.io/api/core/v1"
 
 	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
+	adaptorapi "github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/mqtt/api"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/testdata"
-	adaptorapi "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/mqtt/api"
 )
 
 func TestClientBuilder_Render(t *testing.T) {

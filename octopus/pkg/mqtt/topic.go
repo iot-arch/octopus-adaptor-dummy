@@ -6,8 +6,8 @@ import (
 
 	corev1 "k8s.io/api/core/v1"
 
-	"github.com/iot-arch/adaptors/dummy/pkg/mqtt/api"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/collection"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/mqtt/api"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/collection"
 )
 
 type SegmentTopic interface {

@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 
 	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/converter"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/converter"
 )
 
 // ExtractDeviceLinkFieldPathAsBytes is extracts the field from the given DeviceLink

@@ -4,7 +4,7 @@ import (
 	"github.com/go-logr/logr"
 	flag "github.com/spf13/pflag"
 
-	"github.com/iot-arch/adaptors/dummy/pkg/util/log/zap"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/zap"
 )
 
 type loggingT struct {

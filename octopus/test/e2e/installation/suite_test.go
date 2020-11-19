@@ -11,10 +11,10 @@ import (
 	"k8s.io/client-go/rest"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/brain"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/limb"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/printer"
-	"github.com/iot-arch/adaptors/dummy/pkg/brain"
-	"github.com/iot-arch/adaptors/dummy/pkg/limb"
 )
 
 var (

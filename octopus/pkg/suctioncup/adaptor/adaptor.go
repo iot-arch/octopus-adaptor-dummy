@@ -12,8 +12,8 @@ import (
 	grpcstatus "google.golang.org/grpc/status"
 	"k8s.io/apimachinery/pkg/types"
 
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/connection"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/connection"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
 )
 
 type Adaptor interface {

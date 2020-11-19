@@ -7,8 +7,8 @@ import (
 	"github.com/go-logr/logr"
 	"github.com/pkg/errors"
 
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/adaptor"
-	"github.com/iot-arch/adaptors/dummy/pkg/suctioncup/event"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/adaptor"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/suctioncup/event"
 )
 
 func newSocketWatcher(log logr.Logger, dir string, adaptors adaptor.Adaptors, adaptorNotifier event.AdaptorNotifier) (*socketWatcher, error) {

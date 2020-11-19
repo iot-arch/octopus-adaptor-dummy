@@ -4,17 +4,16 @@ import (
 	"fmt"
 	"strings"
 
+	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/crd"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/node"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-
-	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
-	"github.com/iot-arch/adaptors/dummy/octopus/test/util/crd"
-	"github.com/iot-arch/adaptors/dummy/octopus/test/util/node"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
 )
 
 var _ = Describe("verify DeviceLink controller", func() {

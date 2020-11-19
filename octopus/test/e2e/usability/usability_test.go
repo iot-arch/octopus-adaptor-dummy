@@ -14,10 +14,10 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/object"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/content"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/exec"
 	"github.com/iot-arch/adaptors/dummy/octopus/test/util/node"
-	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
 )
 
 var _ = Describe("verify usability", func() {
