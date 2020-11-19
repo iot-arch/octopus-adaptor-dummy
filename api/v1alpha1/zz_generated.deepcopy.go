@@ -20,7 +20,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	"github.com/rancher/octopus/pkg/mqtt/api"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt/api"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 

@@ -17,9 +17,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	dummyv1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/api/v1alpha1"
-	"github.com/rancher/octopus/pkg/brain"
-	"github.com/rancher/octopus/pkg/limb"
-	"github.com/rancher/octopus/pkg/util/object"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/brain"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/limb"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/object"
 	"github.com/rancher/octopus/test/framework/envtest"
 	"github.com/rancher/octopus/test/framework/envtest/printer"
 	"github.com/rancher/octopus/test/util/exec"
