@@ -8,7 +8,7 @@ import (
 	"github.com/onsi/ginkgo"
 	"github.com/pkg/errors"
 
-	"github.com/rancher/octopus/pkg/util/converter"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/converter"
 )
 
 // LoadBytes gets the content of file that located in relative `testdata` directory.

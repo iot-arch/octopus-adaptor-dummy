@@ -5,7 +5,7 @@ package content
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/rancher/octopus/pkg/util/converter"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/converter"
 )
 
 func ToRawExtension(content interface{}) *runtime.RawExtension {
