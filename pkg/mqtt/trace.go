@@ -6,7 +6,7 @@ import (
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/go-logr/logr"
 
-	"github.com/rancher/octopus/pkg/util/log/zap"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/log/zap"
 )
 
 var log mqtt.Logger = mqtt.NOOPLogger{}

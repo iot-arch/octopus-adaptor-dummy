@@ -9,10 +9,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
-	adaptorapi "github.com/rancher/octopus/pkg/adaptor/api/v1alpha1"
-	"github.com/rancher/octopus/pkg/mqtt/api"
-	"github.com/rancher/octopus/test/util/testdata"
+	adaptorapi "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt/api"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/util/testdata"
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/api/v1alpha1"
 )
 
 func TestClientBuilder_Render(t *testing.T) {

@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 
-	"github.com/rancher/octopus/pkg/mqtt/api"
-	"github.com/rancher/octopus/pkg/mqtt/test"
-	"github.com/rancher/octopus/pkg/util/log/zap"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt/api"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt/test"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/log/zap"
 )
 
 func TestNewClient_Publish(t *testing.T) {

@@ -11,10 +11,10 @@ import (
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 
-	adaptorapi "github.com/rancher/octopus/pkg/adaptor/api/v1alpha1"
-	"github.com/rancher/octopus/pkg/mqtt/api"
-	"github.com/rancher/octopus/pkg/util/converter"
-	"github.com/rancher/octopus/pkg/util/uuid"
+	adaptorapi "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt/api"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/converter"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/uuid"
 )
 
 type CustomMQTTOptionFunc func(options *mqtt.ClientOptions) error

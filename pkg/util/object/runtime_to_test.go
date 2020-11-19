@@ -9,7 +9,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/api/v1alpha1"
 )
 
 func TestToDeviceLinkObject(t *testing.T) {

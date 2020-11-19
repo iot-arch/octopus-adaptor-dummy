@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/rancher/octopus/pkg/util/converter"
+	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/converter"
 )
 
 // MQTTMessageQoSLevel defines the QoS level of publishing message.
