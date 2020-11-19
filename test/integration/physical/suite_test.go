@@ -13,9 +13,9 @@ import (
 	. "github.com/onsi/gomega"
 	"github.com/pkg/errors"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/test/framework/envtest/printer"
-	"github.com/iot-arch/octopus-adaptors/dummy/test/util/exec"
-	"github.com/iot-arch/octopus-adaptors/dummy/test/util/fuzz"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/printer"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/exec"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/fuzz"
 )
 
 var (

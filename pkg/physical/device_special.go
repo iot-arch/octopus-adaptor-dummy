@@ -10,12 +10,12 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/runtime"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/api/v1alpha1"
-	api "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/socket/handler"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/metadata"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/object"
+	"github.com/iot-arch/adaptors/dummy/api/v1alpha1"
+	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/socket/handler"
+	"github.com/iot-arch/adaptors/dummy/pkg/metadata"
+	"github.com/iot-arch/adaptors/dummy/pkg/mqtt"
+	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
 )
 
 func NewSpecialDevice(log logr.Logger, meta metav1.ObjectMeta, toLimb DummySpecialDeviceLimbSyncer) Device {

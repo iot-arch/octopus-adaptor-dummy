@@ -4,13 +4,13 @@ import (
 	"golang.org/x/sync/errgroup"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor"
-	api "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/connection"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/log"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/registration"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/metadata"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/critical"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor"
+	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/connection"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/log"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/registration"
+	"github.com/iot-arch/adaptors/dummy/pkg/metadata"
+	"github.com/iot-arch/adaptors/dummy/pkg/util/critical"
 )
 
 // +kubebuilder:rbac:groups=devices.edge.cattle.io,resources=dummyspecialdevices,verbs=get;list;watch;create;update;patch;delete

@@ -10,9 +10,9 @@ import (
 	"google.golang.org/grpc/status"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	mock_v1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1/mock"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	mock_v1alpha1 "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1/mock"
 )
 
 var _ = Describe("verify Connection", func() {

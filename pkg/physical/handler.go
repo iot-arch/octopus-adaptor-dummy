@@ -1,7 +1,7 @@
 package physical
 
 import (
-	"github.com/iot-arch/octopus-adaptors/dummy/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/api/v1alpha1"
 )
 
 // DummySpecialDeviceLimbSyncer is used to sync physical special device.

@@ -9,13 +9,13 @@ import (
 	k8sruntime "k8s.io/apimachinery/pkg/runtime"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/api/v1alpha1"
-	api "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/connection"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/log"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/mqtt"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/physical"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/object"
+	"github.com/iot-arch/adaptors/dummy/api/v1alpha1"
+	api "github.com/iot-arch/adaptors/dummy/pkg/adaptor/api/v1alpha1"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/connection"
+	"github.com/iot-arch/adaptors/dummy/pkg/adaptor/log"
+	"github.com/iot-arch/adaptors/dummy/pkg/mqtt"
+	"github.com/iot-arch/adaptors/dummy/pkg/physical"
+	"github.com/iot-arch/adaptors/dummy/pkg/util/object"
 )
 
 func NewService() *Service {

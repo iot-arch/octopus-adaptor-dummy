@@ -5,11 +5,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/log"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/dummy"
-	_ "github.com/iot-arch/octopus-adaptors/dummy/pkg/util/log/handler"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/log/logflag"
-	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/version/verflag"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/adaptor/log"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/dummy"
+	_ "github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/handler"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/log/logflag"
+	"github.com/iot-arch/adaptors/dummy/octopus/pkg/util/version/verflag"
 )
 
 const (

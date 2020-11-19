@@ -12,12 +12,12 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	apiv1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/api/v1alpha1"
-	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
-	. "github.com/iot-arch/octopus-adaptors/dummy/test/framework/envtest/dsl"
-	"github.com/iot-arch/octopus-adaptors/dummy/test/util/content"
-	"github.com/iot-arch/octopus-adaptors/dummy/test/util/exec"
-	"github.com/iot-arch/octopus-adaptors/dummy/test/util/node"
+	apiv1alpha1 "github.com/iot-arch/adaptors/dummy/api/v1alpha1"
+	edgev1alpha1 "github.com/iot-arch/adaptors/dummy/octopus/api/v1alpha1"
+	. "github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/dsl"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/content"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/exec"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/util/node"
 )
 
 /*

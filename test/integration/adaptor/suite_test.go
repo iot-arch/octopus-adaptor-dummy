@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/iot-arch/octopus-adaptors/dummy/test/framework/envtest/printer"
+	"github.com/iot-arch/adaptors/dummy/octopus/test/framework/envtest/printer"
 )
 
 var (
