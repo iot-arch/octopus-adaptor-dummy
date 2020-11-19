@@ -20,9 +20,9 @@ import (
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/brain"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/limb"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/object"
-	"github.com/rancher/octopus/test/framework/envtest"
-	"github.com/rancher/octopus/test/framework/envtest/printer"
-	"github.com/rancher/octopus/test/util/exec"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/framework/envtest"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/framework/envtest/printer"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/util/exec"
 )
 
 var (

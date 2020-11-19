@@ -13,11 +13,11 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	apiv1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/api/v1alpha1"
+	. "github.com/iot-arch/octopus-adaptors/dummy/test/framework/envtest/dsl"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/util/content"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/util/exec"
+	"github.com/iot-arch/octopus-adaptors/dummy/test/util/node"
 	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
-	. "github.com/rancher/octopus/test/framework/envtest/dsl"
-	"github.com/rancher/octopus/test/util/content"
-	"github.com/rancher/octopus/test/util/exec"
-	"github.com/rancher/octopus/test/util/node"
 )
 
 /*
