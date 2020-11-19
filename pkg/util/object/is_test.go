@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
 )
 
 func TestIsDeleted(t *testing.T) {

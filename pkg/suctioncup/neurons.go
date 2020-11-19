@@ -7,11 +7,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
 	api "github.com/iot-arch/octopus-adaptors/dummy/pkg/adaptor/api/v1alpha1"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/metrics"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/suctioncup/connection"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/object"
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
 )
 
 func (m *manager) ExistAdaptor(name string) bool {

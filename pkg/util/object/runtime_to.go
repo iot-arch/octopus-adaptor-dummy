@@ -5,7 +5,7 @@ import (
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
 )
 
 func ToDeviceLinkObject(obj runtime.Object) *edgev1alpha1.DeviceLink {

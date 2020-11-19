@@ -20,7 +20,7 @@ limitations under the License.
 package api
 
 import (
-	"github.com/rancher/octopus/api/v1alpha1"
+	"github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

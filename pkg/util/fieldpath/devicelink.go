@@ -3,8 +3,8 @@ package fieldpath
 import (
 	"github.com/pkg/errors"
 
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/util/converter"
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
 )
 
 // ExtractDeviceLinkFieldPathAsBytes is extracts the field from the given DeviceLink

@@ -3,8 +3,8 @@ package suctioncup
 import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
+	edgev1alpha1 "github.com/iot-arch/octopus-adaptors/dummy/octopus/api/v1alpha1"
 	"github.com/iot-arch/octopus-adaptors/dummy/pkg/suctioncup/event"
-	edgev1alpha1 "github.com/rancher/octopus/api/v1alpha1"
 )
 
 type Manager interface {
