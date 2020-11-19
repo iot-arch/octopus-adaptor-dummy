@@ -1,0 +1,1036 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    devices.edge.cattle.io/description: Dummy is used to quickly experience Octopus.
+      The Dummy adaptor can simulate the interaction of limb and adaptor.
+    devices.edge.cattle.io/device-property: ""
+    devices.edge.cattle.io/enable: "true"
+    devices.edge.cattle.io/icon: ""
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: octopus-adaptor-dummy
+    app.kubernetes.io/version: master
+  name: dummyprotocoldevices.devices.edge.cattle.io
+spec:
+  group: devices.edge.cattle.io
+  names:
+    kind: DummyProtocolDevice
+    listKind: DummyProtocolDeviceList
+    plural: dummyprotocoldevices
+    shortNames:
+    - dummyprotocol
+    singular: dummyprotocoldevice
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.protocol.ip
+      name: IP
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DummyProtocolDevice is the schema for the dummy protocol device
+          API.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DummyProtocolDeviceSpec defines the desired state of DummyProtocolDevice.
+            properties:
+              extension:
+                description: Specifies the extension of device.
+                properties:
+                  mqtt:
+                    description: Specifies the MQTT settings.
+                    properties:
+                      client:
+                        description: Specifies the client settings.
+                        properties:
+                          autoReconnect:
+                            default: true
+                            description: Configures using the automatic reconnection
+                              logic. The default value is "true".
+                            type: boolean
+                          basicAuth:
+                            description: Specifies the username and password that
+                              the client connects to the MQTT broker. Without the
+                              use of TLSConfig, the account information will be sent
+                              in plaintext across the wire.
+                            properties:
+                              password:
+                                description: Specifies the password for basic authenication.
+                                type: string
+                              passwordRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the password.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              username:
+                                description: Specifies the username for basic authentication.
+                                type: string
+                              usernameRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the username.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                            type: object
+                          cleanSession:
+                            default: true
+                            description: Specifies setting the "clean session" flag
+                              in the connect message that the MQTT broker should not
+                              save it. If the value is "false", the broker stores
+                              all missed messages for the client that subscribed with
+                              QoS 1 or 2. Any messages that were going to be sent
+                              by this client before disconnecting previously but didn't
+                              send upon connecting to the broker. The default value
+                              is "true".
+                            type: boolean
+                          connectTimeout:
+                            default: 30s
+                            description: Specifies the amount of time that the client
+                              try to open a connection to an MQTT broker before timing
+                              out and getting error. A duration of 0 never times out.
+                              The default value is "30s".
+                            type: string
+                          disconnectQuiesce:
+                            description: Specifies the quiesce when the client disconnects.
+                              The default value is "5s".
+                            type: string
+                          httpHeaders:
+                            additionalProperties:
+                              items:
+                                type: string
+                              type: array
+                            description: Specifies the additional HTTP headers that
+                              the client sends in the WebSocket opening handshake.
+                            type: object
+                            x-kubernetes-map-type: atomic
+                          keepAlive:
+                            default: 30s
+                            description: Specifies the amount of time that the client
+                              should wait before sending a PING request to the broker.
+                              This will allow the client to know that the connection
+                              has not been lost with the server. A duration of 0 never
+                              keeps alive. The default keep alive is "30s".
+                            type: string
+                          maxReconnectInterval:
+                            default: 10m
+                            description: Specifies the amount of time that the client
+                              should wait before reconnecting to the broker. The first
+                              reconnect interval is 1 second, and then the interval
+                              is incremented by *2 until `MaxReconnectInterval` is
+                              reached. This is only valid if `AutoReconnect` is true.
+                              A duration of 0 may trigger the reconnection immediately.
+                              The default value is "10m".
+                            type: string
+                          messageChannelDepth:
+                            default: 100
+                            description: Specifies the size of the internal queue
+                              that holds messages while the client is temporarily
+                              offline, allowing the application to publish when the
+                              client is reconnected. This is only valid if `AutoReconnect`
+                              is true. The default value is "100".
+                            type: integer
+                          order:
+                            default: true
+                            description: Specifies the message routing to guarantee
+                              order within each QoS level. If set to false, the message
+                              can be delivered asynchronously from the client to the
+                              application and possibly arrive out of order. The default
+                              value is "true".
+                            type: boolean
+                          pingTimeout:
+                            default: 10s
+                            description: Specifies the amount of time that the client
+                              should wait after sending a PING request to the broker.
+                              This will allow the client to know that the connection
+                              has been lost with the server. A duration of 0 may cause
+                              unnecessary timeout error. The default value is "10s".
+                            type: string
+                          protocolVersion:
+                            default: 0
+                            description: Specifies the MQTT protocol version that
+                              the cluster uses to connect to broker. Legitimate values
+                              are currently 3 - MQTT v3.1 or 4 - MQTT v3.1.1. The
+                              default value is 0, which means MQTT v3.1.1 identification
+                              is preferred.
+                            enum:
+                            - 0
+                            - 3
+                            - 4
+                            type: integer
+                          resumeSubs:
+                            default: false
+                            description: Specifies to enable resuming of stored (un)subscribe
+                              messages when connecting but not reconnecting. This
+                              is only valid if `CleanSession` is false. The default
+                              value is "false".
+                            type: boolean
+                          server:
+                            description: Specifies the server URI of MQTT broker,
+                              the format should be `schema://host:port`. The "schema"
+                              is one of the "ws", "wss", "tcp", "unix", "ssl", "tls"
+                              or "tcps".
+                            pattern: ^(ws|wss|tcp|unix|ssl|tls|tcps)+://[^\s]*$
+                            type: string
+                          store:
+                            description: Specifies to provide message persistence
+                              in cases where QoS level is 1 or 2.
+                            properties:
+                              directoryPrefix:
+                                description: Specifies the directory prefix of the
+                                  storage, if using file store. The default value
+                                  is "/var/run/octopus/mqtt".
+                                pattern: ^/.*[^/]$
+                                type: string
+                              type:
+                                default: Memory
+                                description: Specifies the type of storage. The default
+                                  value is "Memory".
+                                enum:
+                                - Memory
+                                - File
+                                type: string
+                            type: object
+                          tlsConfig:
+                            description: Specifies the TLS configuration that the
+                              client connects to the MQTT broker.
+                            properties:
+                              caFilePEM:
+                                description: Specifies the PEM format content of the
+                                  CA certificate, which is used for validate the server
+                                  certificate with.
+                                type: string
+                              caFilePEMRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the CA file
+                                  PEM content.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              certFilePEM:
+                                description: Specifies the PEM format content of the
+                                  certificate(public key), which is used for client
+                                  authenticate to the server.
+                                type: string
+                              certFilePEMRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the client certificate
+                                  file PEM content.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              insecureSkipVerify:
+                                description: Doesn't validate the server certificate.
+                                type: boolean
+                              keyFilePEM:
+                                description: Specifies the PEM format content of the
+                                  key(private key), which is used for client authenticate
+                                  to the server.
+                                type: string
+                              keyFilePEMRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the client key
+                                  file PEM content.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              serverName:
+                                description: Indicates the name of the server, ref
+                                  to http://tools.ietf.org/html/rfc4366#section-3.1.
+                                type: string
+                            type: object
+                          waitTimeout:
+                            description: Specifies the amount of time that the client
+                              should timeout after subscribed/published a message.
+                              A duration of 0 never times out.
+                            type: string
+                          writeTimeout:
+                            default: 30s
+                            description: Specifies the amount of time that the client
+                              publish a message successfully before getting a timeout
+                              error. A duration of 0 never times out. The default
+                              value is "30s".
+                            type: string
+                        required:
+                        - server
+                        type: object
+                      message:
+                        description: Specifies the message settings.
+                        properties:
+                          operator:
+                            description: Specifies the operator for rendering the
+                              `:operator` keyword of topic.
+                            properties:
+                              read:
+                                description: Specifies the operator for rendering
+                                  the `:operator` keyword of topic during subscribing.
+                                type: string
+                              write:
+                                description: Specifies the operator for rendering
+                                  the `:operator` keyword of topic during publishing.
+                                type: string
+                            type: object
+                          path:
+                            description: Specifies the path for rendering the `:path`
+                              keyword of topic.
+                            type: string
+                          qos:
+                            default: 1
+                            description: Specifies the QoS of the message. The default
+                              value is "1".
+                            enum:
+                            - 0
+                            - 1
+                            - 2
+                            type: integer
+                          retained:
+                            default: true
+                            description: Specifies if the last published message to
+                              be retained. The default value is "true".
+                            type: boolean
+                          topic:
+                            description: Specifies the topic.
+                            pattern: .*[^/]$
+                            type: string
+                          will:
+                            description: Specifies the will message.
+                            properties:
+                              content:
+                                description: Specifies the content of will message.
+                                  The serialized form of the content is a base64 encoded
+                                  string, representing the arbitrary (possibly non-string)
+                                  content value here.
+                                type: string
+                              topic:
+                                description: Specifies the topic of will message.
+                                  if not set, the topic will append "$will" to the
+                                  topic name specified in parent field as its topic
+                                  name.
+                                pattern: .*[^/]$
+                                type: string
+                            required:
+                            - content
+                            type: object
+                        required:
+                        - topic
+                        type: object
+                    required:
+                    - client
+                    - message
+                    type: object
+                type: object
+              properties:
+                additionalProperties:
+                  description: DummyProtocolDeviceProperty defines the desired property
+                    of DummyProtocolDevice.
+                  properties:
+                    arrayProperties:
+                      description: Specifies the item property if the type is "array".
+                      type: object
+                      x-kubernetes-preserve-unknown-fields: true
+                    description:
+                      description: Specifies the description of property.
+                      type: string
+                    objectProperties:
+                      additionalProperties:
+                        type: object
+                        x-kubernetes-preserve-unknown-fields: true
+                      description: Specifies the object property if the type is "object".
+                      type: object
+                    readOnly:
+                      description: Specifies if the property is readonly.
+                      type: boolean
+                    type:
+                      description: Specifies the type of property.
+                      enum:
+                      - string
+                      - int
+                      - float
+                      - boolean
+                      - array
+                      - object
+                      type: string
+                  required:
+                  - type
+                  type: object
+                description: Specifies the properties of device.
+                type: object
+              protocol:
+                description: Specifies the protocol for accessing the device.
+                properties:
+                  ip:
+                    description: Specifies the IP address of device.
+                    type: string
+                required:
+                - ip
+                type: object
+            required:
+            - protocol
+            type: object
+          status:
+            description: DummyProtocolDeviceStatus defines the observed state of DummyProtocolDevice.
+            properties:
+              properties:
+                additionalProperties:
+                  description: DummyProtocolDeviceStatusProperty defines the observed
+                    property of DummyProtocolDevice.
+                  properties:
+                    arrayValue:
+                      description: Reports the value of array type.
+                      items:
+                        type: object
+                        x-kubernetes-preserve-unknown-fields: true
+                      type: array
+                    booleanValue:
+                      description: Reports the value of boolean type.
+                      type: boolean
+                    floatValue:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      description: Reports the value of float type.
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    intValue:
+                      description: Reports the value of int type.
+                      type: integer
+                    objectValue:
+                      additionalProperties:
+                        type: object
+                        x-kubernetes-preserve-unknown-fields: true
+                      description: Reports the value of object type.
+                      type: object
+                    stringValue:
+                      description: Reports the value of string type.
+                      type: string
+                    type:
+                      description: Reports the type of property.
+                      enum:
+                      - string
+                      - int
+                      - float
+                      - boolean
+                      - array
+                      - object
+                      type: string
+                  type: object
+                description: Reports the properties of device.
+                type: object
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    devices.edge.cattle.io/description: Dummy is used to quickly experience Octopus.
+      The Dummy adaptor can simulate the interaction of limb and adaptor.
+    devices.edge.cattle.io/device-property: ""
+    devices.edge.cattle.io/enable: "true"
+    devices.edge.cattle.io/icon: ""
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: octopus-adaptor-dummy
+    app.kubernetes.io/version: master
+  name: dummyspecialdevices.devices.edge.cattle.io
+spec:
+  group: devices.edge.cattle.io
+  names:
+    kind: DummySpecialDevice
+    listKind: DummySpecialDeviceList
+    plural: dummyspecialdevices
+    shortNames:
+    - dummyspecial
+    singular: dummyspecialdevice
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.protocol.location
+      name: LOCATION
+      type: string
+    - jsonPath: .status.gear
+      name: GEAR
+      type: string
+    - format: int32
+      jsonPath: .status.rotatingSpeed
+      name: SPEED
+      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DummySpecialDevice is the schema for the dummy special device
+          API.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DummySpecialDeviceSpec defines the desired state of DummySpecialDevice.
+            properties:
+              extension:
+                description: Specifies the extension of device.
+                properties:
+                  mqtt:
+                    description: Specifies the MQTT settings.
+                    properties:
+                      client:
+                        description: Specifies the client settings.
+                        properties:
+                          autoReconnect:
+                            default: true
+                            description: Configures using the automatic reconnection
+                              logic. The default value is "true".
+                            type: boolean
+                          basicAuth:
+                            description: Specifies the username and password that
+                              the client connects to the MQTT broker. Without the
+                              use of TLSConfig, the account information will be sent
+                              in plaintext across the wire.
+                            properties:
+                              password:
+                                description: Specifies the password for basic authenication.
+                                type: string
+                              passwordRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the password.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              username:
+                                description: Specifies the username for basic authentication.
+                                type: string
+                              usernameRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the username.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                            type: object
+                          cleanSession:
+                            default: true
+                            description: Specifies setting the "clean session" flag
+                              in the connect message that the MQTT broker should not
+                              save it. If the value is "false", the broker stores
+                              all missed messages for the client that subscribed with
+                              QoS 1 or 2. Any messages that were going to be sent
+                              by this client before disconnecting previously but didn't
+                              send upon connecting to the broker. The default value
+                              is "true".
+                            type: boolean
+                          connectTimeout:
+                            default: 30s
+                            description: Specifies the amount of time that the client
+                              try to open a connection to an MQTT broker before timing
+                              out and getting error. A duration of 0 never times out.
+                              The default value is "30s".
+                            type: string
+                          disconnectQuiesce:
+                            description: Specifies the quiesce when the client disconnects.
+                              The default value is "5s".
+                            type: string
+                          httpHeaders:
+                            additionalProperties:
+                              items:
+                                type: string
+                              type: array
+                            description: Specifies the additional HTTP headers that
+                              the client sends in the WebSocket opening handshake.
+                            type: object
+                            x-kubernetes-map-type: atomic
+                          keepAlive:
+                            default: 30s
+                            description: Specifies the amount of time that the client
+                              should wait before sending a PING request to the broker.
+                              This will allow the client to know that the connection
+                              has not been lost with the server. A duration of 0 never
+                              keeps alive. The default keep alive is "30s".
+                            type: string
+                          maxReconnectInterval:
+                            default: 10m
+                            description: Specifies the amount of time that the client
+                              should wait before reconnecting to the broker. The first
+                              reconnect interval is 1 second, and then the interval
+                              is incremented by *2 until `MaxReconnectInterval` is
+                              reached. This is only valid if `AutoReconnect` is true.
+                              A duration of 0 may trigger the reconnection immediately.
+                              The default value is "10m".
+                            type: string
+                          messageChannelDepth:
+                            default: 100
+                            description: Specifies the size of the internal queue
+                              that holds messages while the client is temporarily
+                              offline, allowing the application to publish when the
+                              client is reconnected. This is only valid if `AutoReconnect`
+                              is true. The default value is "100".
+                            type: integer
+                          order:
+                            default: true
+                            description: Specifies the message routing to guarantee
+                              order within each QoS level. If set to false, the message
+                              can be delivered asynchronously from the client to the
+                              application and possibly arrive out of order. The default
+                              value is "true".
+                            type: boolean
+                          pingTimeout:
+                            default: 10s
+                            description: Specifies the amount of time that the client
+                              should wait after sending a PING request to the broker.
+                              This will allow the client to know that the connection
+                              has been lost with the server. A duration of 0 may cause
+                              unnecessary timeout error. The default value is "10s".
+                            type: string
+                          protocolVersion:
+                            default: 0
+                            description: Specifies the MQTT protocol version that
+                              the cluster uses to connect to broker. Legitimate values
+                              are currently 3 - MQTT v3.1 or 4 - MQTT v3.1.1. The
+                              default value is 0, which means MQTT v3.1.1 identification
+                              is preferred.
+                            enum:
+                            - 0
+                            - 3
+                            - 4
+                            type: integer
+                          resumeSubs:
+                            default: false
+                            description: Specifies to enable resuming of stored (un)subscribe
+                              messages when connecting but not reconnecting. This
+                              is only valid if `CleanSession` is false. The default
+                              value is "false".
+                            type: boolean
+                          server:
+                            description: Specifies the server URI of MQTT broker,
+                              the format should be `schema://host:port`. The "schema"
+                              is one of the "ws", "wss", "tcp", "unix", "ssl", "tls"
+                              or "tcps".
+                            pattern: ^(ws|wss|tcp|unix|ssl|tls|tcps)+://[^\s]*$
+                            type: string
+                          store:
+                            description: Specifies to provide message persistence
+                              in cases where QoS level is 1 or 2.
+                            properties:
+                              directoryPrefix:
+                                description: Specifies the directory prefix of the
+                                  storage, if using file store. The default value
+                                  is "/var/run/octopus/mqtt".
+                                pattern: ^/.*[^/]$
+                                type: string
+                              type:
+                                default: Memory
+                                description: Specifies the type of storage. The default
+                                  value is "Memory".
+                                enum:
+                                - Memory
+                                - File
+                                type: string
+                            type: object
+                          tlsConfig:
+                            description: Specifies the TLS configuration that the
+                              client connects to the MQTT broker.
+                            properties:
+                              caFilePEM:
+                                description: Specifies the PEM format content of the
+                                  CA certificate, which is used for validate the server
+                                  certificate with.
+                                type: string
+                              caFilePEMRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the CA file
+                                  PEM content.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              certFilePEM:
+                                description: Specifies the PEM format content of the
+                                  certificate(public key), which is used for client
+                                  authenticate to the server.
+                                type: string
+                              certFilePEMRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the client certificate
+                                  file PEM content.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              insecureSkipVerify:
+                                description: Doesn't validate the server certificate.
+                                type: boolean
+                              keyFilePEM:
+                                description: Specifies the PEM format content of the
+                                  key(private key), which is used for client authenticate
+                                  to the server.
+                                type: string
+                              keyFilePEMRef:
+                                description: Specifies the relationship of DeviceLink's
+                                  references to refer to the value as the client key
+                                  file PEM content.
+                                properties:
+                                  item:
+                                    description: Specifies the item name of the referred
+                                      reference.
+                                    type: string
+                                  name:
+                                    description: Specifies the name of reference.
+                                    type: string
+                                required:
+                                - item
+                                - name
+                                type: object
+                              serverName:
+                                description: Indicates the name of the server, ref
+                                  to http://tools.ietf.org/html/rfc4366#section-3.1.
+                                type: string
+                            type: object
+                          waitTimeout:
+                            description: Specifies the amount of time that the client
+                              should timeout after subscribed/published a message.
+                              A duration of 0 never times out.
+                            type: string
+                          writeTimeout:
+                            default: 30s
+                            description: Specifies the amount of time that the client
+                              publish a message successfully before getting a timeout
+                              error. A duration of 0 never times out. The default
+                              value is "30s".
+                            type: string
+                        required:
+                        - server
+                        type: object
+                      message:
+                        description: Specifies the message settings.
+                        properties:
+                          operator:
+                            description: Specifies the operator for rendering the
+                              `:operator` keyword of topic.
+                            properties:
+                              read:
+                                description: Specifies the operator for rendering
+                                  the `:operator` keyword of topic during subscribing.
+                                type: string
+                              write:
+                                description: Specifies the operator for rendering
+                                  the `:operator` keyword of topic during publishing.
+                                type: string
+                            type: object
+                          path:
+                            description: Specifies the path for rendering the `:path`
+                              keyword of topic.
+                            type: string
+                          qos:
+                            default: 1
+                            description: Specifies the QoS of the message. The default
+                              value is "1".
+                            enum:
+                            - 0
+                            - 1
+                            - 2
+                            type: integer
+                          retained:
+                            default: true
+                            description: Specifies if the last published message to
+                              be retained. The default value is "true".
+                            type: boolean
+                          topic:
+                            description: Specifies the topic.
+                            pattern: .*[^/]$
+                            type: string
+                          will:
+                            description: Specifies the will message.
+                            properties:
+                              content:
+                                description: Specifies the content of will message.
+                                  The serialized form of the content is a base64 encoded
+                                  string, representing the arbitrary (possibly non-string)
+                                  content value here.
+                                type: string
+                              topic:
+                                description: Specifies the topic of will message.
+                                  if not set, the topic will append "$will" to the
+                                  topic name specified in parent field as its topic
+                                  name.
+                                pattern: .*[^/]$
+                                type: string
+                            required:
+                            - content
+                            type: object
+                        required:
+                        - topic
+                        type: object
+                    required:
+                    - client
+                    - message
+                    type: object
+                type: object
+              gear:
+                default: slow
+                description: Specifies how fast the device should be.
+                enum:
+                - slow
+                - middle
+                - fast
+                type: string
+              "on":
+                description: Specifies if turn on the device.
+                type: boolean
+              protocol:
+                description: Specifies the protocol for accessing the device.
+                properties:
+                  location:
+                    description: Specifies the location of device.
+                    type: string
+                required:
+                - location
+                type: object
+            required:
+            - "on"
+            - protocol
+            type: object
+          status:
+            description: DummySpecialDeviceStatus defines the observed state of DummySpecialDevice.
+            properties:
+              gear:
+                description: Reports the current gear of device.
+                enum:
+                - slow
+                - middle
+                - fast
+                type: string
+              rotatingSpeed:
+                description: Reports the detail number of speed.
+                format: int32
+                type: integer
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/name: octopus-adaptor-dummy
+    app.kubernetes.io/version: master
+  name: octopus-adaptor-dummy-manager-role
+rules:
+- apiGroups:
+  - devices.edge.cattle.io
+  resources:
+  - dummyprotocoldevices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - devices.edge.cattle.io
+  resources:
+  - dummyprotocoldevices/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - devices.edge.cattle.io
+  resources:
+  - dummyspecialdevices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - devices.edge.cattle.io
+  resources:
+  - dummyspecialdevices/status
+  verbs:
+  - get
+  - patch
+  - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/name: octopus-adaptor-dummy
+    app.kubernetes.io/version: master
+  name: octopus-adaptor-dummy-manager-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: octopus-adaptor-dummy-manager-role
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: octopus-system
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app.kubernetes.io/component: adaptor
+    app.kubernetes.io/name: octopus-adaptor-dummy
+    app.kubernetes.io/version: master
+  name: octopus-adaptor-dummy-adaptor
+  namespace: octopus-system
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: adaptor
+      app.kubernetes.io/name: octopus-adaptor-dummy
+      app.kubernetes.io/version: master
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: adaptor
+        app.kubernetes.io/name: octopus-adaptor-dummy
+        app.kubernetes.io/version: master
+    spec:
+      containers:
+      - image: cnrancher/octopus-adaptor-dummy:master
+        imagePullPolicy: Always
+        name: octopus
+        volumeMounts:
+        - mountPath: /var/lib/octopus/adaptors/
+          name: sockets
+      volumes:
+      - hostPath:
+          path: /var/lib/octopus/adaptors/
+          type: DirectoryOrCreate
+        name: sockets
